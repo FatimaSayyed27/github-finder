@@ -1,46 +1,45 @@
 function UserCard({ user, darkMode }) {
   return (
     <div
-      className={`mt-8 rounded-3xl p-6 shadow-2xl transition-all ${
+      className={`mt-8 rounded-3xl p-4 shadow-2xl transition-all overflow-hidden ${
         darkMode ? "glass text-white" : "glass-light text-gray-800"
       }`}
     >
-      {/* Mobile: vertical, Desktop: horizontal */}
-      <div className="flex flex-col sm:flex-row gap-4 items-center sm:items-start">
+      {/* Top section */}
+      <div className="flex flex-col items-center text-center gap-3 mb-4">
         <img
           src={user.avatar_url}
           alt={user.login}
-          className="w-20 h-20 rounded-2xl border-2 border-blue-400 shadow-lg shadow-blue-500/30"
+          className="w-20 h-20 rounded-2xl border-2 border-blue-400 shadow-lg"
         />
-
-        <div className="flex flex-col gap-2 flex-1 text-center sm:text-left">
+        <div>
           <h2 className="text-xl font-bold">{user.name || user.login}</h2>
           <a
             href={user.html_url}
             target="_blank"
-            className="text-blue-400 hover:text-blue-300 text-sm transition"
+            className="text-blue-400 hover:text-blue-300 text-sm"
           >
             @{user.login}
           </a>
-          {user.bio && (
-            <p
-              className={`text-sm ${darkMode ? "text-gray-300" : "text-gray-600"}`}
-            >
-              {user.bio}
-            </p>
-          )}
-          {user.location && (
-            <p
-              className={`text-sm ${darkMode ? "text-gray-400" : "text-gray-500"}`}
-            >
-              📍 {user.location}
-            </p>
-          )}
         </div>
+        {user.bio && (
+          <p
+            className={`text-sm px-2 ${darkMode ? "text-gray-300" : "text-gray-600"}`}
+          >
+            {user.bio}
+          </p>
+        )}
+        {user.location && (
+          <p
+            className={`text-sm ${darkMode ? "text-gray-400" : "text-gray-500"}`}
+          >
+            📍 {user.location}
+          </p>
+        )}
       </div>
 
-      {/* Stats — always full width below */}
-      <div className="grid grid-cols-3 mt-4">
+      {/* Stats */}
+      <div className="grid grid-cols-3 gap-2 w-full">
         {[
           { label: "Repos", value: user.public_repos },
           { label: "Followers", value: user.followers },
@@ -48,7 +47,7 @@ function UserCard({ user, darkMode }) {
         ].map((stat) => (
           <div
             key={stat.label}
-            className={`px-4 py-2 rounded-xl text-center flex-1 mx-1 ${
+            className={`py-3 rounded-xl text-center ${
               darkMode ? "bg-white/10" : "bg-black/10"
             }`}
           >
