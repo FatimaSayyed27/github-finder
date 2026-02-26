@@ -30,5 +30,6 @@ npm run dev
 
 ---
 
-Made by [FatimaSayyed27]
+Made by : Fatima Sayyed
+
 
