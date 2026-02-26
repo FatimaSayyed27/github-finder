@@ -40,7 +40,7 @@ function UserCard({ user, darkMode }) {
       </div>
 
       {/* Stats — always full width below */}
-      <div className="flex justify-around mt-4">
+      <div className="grid grid-cols-3 mt-4">
         {[
           { label: "Repos", value: user.public_repos },
           { label: "Followers", value: user.followers },
