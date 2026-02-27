@@ -1,4 +1,4 @@
-// import { useState } from "react";
+import { useState } from "react";
 import SearchBar from "./components/SearchBar";
 import UserCard from "./components/UserCard";
 import RepoList from "./components/RepoList";
@@ -35,23 +35,19 @@ function App() {
     } catch (err) {
       setError("Network error! Check your internet connection 🌐");
     } finally {
-      setLoading(false);
+      setLoading(false);  
     }
   };
 
   return (
     <div
-      style={{ overflowX: "hidden", maxWidth: "100vw" }}
       className={`min-h-screen transition-all duration-500 ${darkMode ? "" : "light-bg"}`}
     >
-      <div
-        style={{ overflowX: "hidden" }}
-        className="w-full max-w-2xl mx-auto px-4 pb-20"
-      >
+      <div className="w-full max-w-2xl mx-auto px-4 pb-20 overflow-hidden">
         {/* Header */}
         <div className="flex flex-col items-center text-center pt-10 mb-8">
           <h1
-            className={`text-5xl font-bold tracking-tight italic ${darkMode ? "text-white" : "text-gray-800"}`}
+            className={`text-6xl font-bold tracking-tight italic ${darkMode ? "text-white" : "text-gray-800"}`}
           >
             GitHub Finder
           </h1>
@@ -70,6 +66,7 @@ function App() {
 
         {loading && <LoadingSkeleton darkMode={darkMode} />}
         <ErrorMessage message={error} darkMode={darkMode} />
+
         {user && <UserCard user={user} darkMode={darkMode} />}
         {user && <RepoList username={user.login} darkMode={darkMode} />}
       </div>
