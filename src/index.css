@@ -6,6 +6,11 @@ body {
   background-attachment: fixed;
 }
 
+html, body {
+  overflow-x: hidden;
+  width: 100%;
+}
+
 .light-bg {
   background: linear-gradient(135deg, #e0eafc, #cfdef3);
   background-attachment: fixed;

@@ -1,30 +1,28 @@
 function UserCard({ user, darkMode }) {
   return (
     <div
-      className={`mt-8 rounded-3xl p-4 shadow-2xl transition-all overflow-hidden ${
+      className={`mt-8 rounded-3xl p-5 shadow-2xl transition-all w-full ${
         darkMode ? "glass text-white" : "glass-light text-gray-800"
       }`}
     >
-      {/* Top section */}
-      <div className="flex flex-col items-center text-center gap-3 mb-4">
+      {/* Avatar + Info — full center */}
+      <div className="flex flex-col items-center text-center gap-3">
         <img
           src={user.avatar_url}
           alt={user.login}
           className="w-20 h-20 rounded-2xl border-2 border-blue-400 shadow-lg"
         />
-        <div>
-          <h2 className="text-xl font-bold">{user.name || user.login}</h2>
-          <a
-            href={user.html_url}
-            target="_blank"
-            className="text-blue-400 hover:text-blue-300 text-sm"
-          >
-            @{user.login}
-          </a>
-        </div>
+        <h2 className="text-xl font-bold">{user.name || user.login}</h2>
+        <a
+          href={user.html_url}
+          target="_blank"
+          className="text-blue-400 text-sm"
+        >
+          @{user.login}
+        </a>
         {user.bio && (
           <p
-            className={`text-sm px-2 ${darkMode ? "text-gray-300" : "text-gray-600"}`}
+            className={`text-sm ${darkMode ? "text-gray-300" : "text-gray-600"}`}
           >
             {user.bio}
           </p>
@@ -39,7 +37,7 @@ function UserCard({ user, darkMode }) {
       </div>
 
       {/* Stats */}
-      <div className="grid grid-cols-3 gap-2 w-full">
+      <div className="grid grid-cols-3 gap-2 mt-4">
         {[
           { label: "Repos", value: user.public_repos },
           { label: "Followers", value: user.followers },
