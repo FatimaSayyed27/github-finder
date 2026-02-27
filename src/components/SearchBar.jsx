@@ -41,7 +41,7 @@ function SearchBar({ onSearch, darkMode, setDarkMode }) {
         </button>
       </div>
 
-      {/* Toggle button — full width neeche */}
+      {/* Toggle button  */}
       <button
         onClick={() => setDarkMode(!darkMode)}
         className={`w-full py-2 rounded-2xl font-medium text-sm transition-all ${
