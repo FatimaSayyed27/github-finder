@@ -43,8 +43,7 @@ function App() {
     <div
       className={`min-h-screen transition-all duration-500 ${darkMode ? "" : "light-bg"}`}
     >
-      <div className="max-w-2xl mx-auto px-4 pb-20">
-
+      <div className="w-full max-w-2xl mx-auto px-4 pb-20 overflow-hidden">
         {/* Header */}
         <div className="flex flex-col items-center text-center pt-10 mb-8">
           <h1
